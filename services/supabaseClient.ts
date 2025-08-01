@@ -81,8 +81,8 @@ export interface Database {
 // IMPORTANT: In a production environment, you should use environment variables
 // (like process.env.SUPABASE_URL) to keep your Supabase credentials secure.
 // These keys are hardcoded here for development convenience.
-const supabaseUrl = 'https://seixvrxytfyrswpunzno.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaXh2cnh5dGZ5cnN3cHVuem5vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM2MjQzMTAsImV4cCI6MjA2OTIwMDMxMH0.SonXWWhn5yoPwpwtGHRLLcFSEe0VhOk01AlU_rzd9rw';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error("Supabase URL and Anon Key are required.");

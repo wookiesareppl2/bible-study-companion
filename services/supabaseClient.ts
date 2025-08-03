@@ -85,7 +85,13 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-    throw new Error("Supabase URL and Anon Key are required.");
+    throw new Error(
+        "Supabase URL and Anon Key are required. " +
+        "For local development, create a .env.local file with:\n" +
+        "VITE_SUPABASE_URL=your_supabase_url\n" +
+        "VITE_SUPABASE_ANON_KEY=your_supabase_anon_key\n" +
+        "Get these values from your Supabase project Settings > API"
+    );
 }
 
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
